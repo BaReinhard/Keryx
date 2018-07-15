@@ -49,8 +49,9 @@ handlers:
 curl -X POST https://YOUR_GOOGLE_URL.appspot.com/SECURE_ENDPOINT -H "Authorization: Bearer $TOKEN" \
 -H "Destination: google" \
 -H "Space: AAAAsDtCfAE" \
+-H "ThreadKey: PR-2" \
 -H "Content-Type: application/json" \
--d '{"text":"yes"}'
+-d '{"text":"PR Opened on Blah Blah"}'
 ```
 
 ### Slack Example
