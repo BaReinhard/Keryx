@@ -28,3 +28,37 @@ handlers:
 - url: /.*
   script: _go_app
 ```
+
+### Requirements
+
+- Authorization Bearer Header
+- Space Header
+  - Space for Slack (slug after /messages/): ![Slug after /messages/](https://user-images.githubusercontent.com/13072194/42738885-84bb6ff2-8840-11e8-9d05-e97c4bf798ff.png)
+  - Space for Google Chat (slug after /room/): ![Slug after /room/](https://user-images.githubusercontent.com/13072194/42738889-93a9ad1c-8840-11e8-9a25-4c809b745632.png)
+- Destination Header
+- Payload Body
+
+### Optional (For Google Chat Only)
+
+- Thread Header
+- ThreadKey Header
+
+### Google Example
+
+```
+curl -X POST https://YOUR_GOOGLE_URL.appspot.com/SECURE_ENDPOINT -H "Authorization: Bearer $TOKEN" \
+-H "Destination: google" \
+-H "Space: AAAAsDtCfAE" \
+-H "Content-Type: application/json" \
+-d '{"text":"yes"}'
+```
+
+### Slack Example
+
+```
+curl -X POST https://YOUR_GOOGLE_URL.appspot.com/SECURE_ENDPOINT -H "Authorization: Bearer $TOKEN" \
+-H "Destination: slack" \
+-H "Space: CBQP83V3M" \
+-H "Content-Type: application/json" \
+-d '{"text":"yes"}'
+```
